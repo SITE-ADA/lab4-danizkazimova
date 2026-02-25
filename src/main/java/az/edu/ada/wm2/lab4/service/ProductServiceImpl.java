@@ -27,8 +27,8 @@ public class ProductServiceImpl implements ProductService{
             product = new Product(
                     UUID.randomUUID(),
                     product.getProductName(),
-                    product.getPrice(),
-                    product.getExpirationDate()
+                    product.getExpirationDate(),
+                    product.getPrice()
             );
         }
 
@@ -61,8 +61,8 @@ public class ProductServiceImpl implements ProductService{
         Product updatedProduct = new Product(
                 id,
                 product.getProductName(),
-                product.getPrice(),
-                product.getExpirationDate()
+                product.getExpirationDate(),
+                product.getPrice()
         );
 
         return productRepository.save(updatedProduct);

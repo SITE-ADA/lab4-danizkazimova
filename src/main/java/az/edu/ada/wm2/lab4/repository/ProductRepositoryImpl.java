@@ -16,8 +16,8 @@ public class ProductRepositoryImpl implements ProductRepository {
             product = new Product(
                     UUID.randomUUID(),
                     product.getProductName(),
-                    product.getPrice(),
-                    product.getExpirationDate()
+                    product.getExpirationDate(),
+                    product.getPrice()
             );
         }
         productStorage.put(product.getId(), product);
