@@ -38,8 +38,8 @@ class ProductControllerTest {
         Product product = new Product(
                 UUID.randomUUID(),
                 "Chocolate",
-                new BigDecimal("8.00"),
-                LocalDate.now().plusDays(20));
+                LocalDate.now().plusDays(20),
+                new BigDecimal("8.00"));
 
         when(productService.createProduct(any(Product.class)))
                 .thenReturn(product);
@@ -57,8 +57,8 @@ class ProductControllerTest {
         Product product = new Product(
                 id,
                 "Coffee",
-                new BigDecimal("12.00"),
-                LocalDate.now().plusDays(15));
+                                LocalDate.now().plusDays(15),
+                new BigDecimal("12.00"));
 
         when(productService.getProductById(id))
                 .thenReturn(product);

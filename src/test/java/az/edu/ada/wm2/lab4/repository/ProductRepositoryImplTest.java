@@ -21,8 +21,8 @@ class ProductRepositoryImplTest {
     void saveAndFindById_shouldWork() {
         Product product = new Product(
                 "Milk",
-                new BigDecimal("5.50"),
-                LocalDate.now().plusDays(5));
+                LocalDate.now().plusDays(5),
+                new BigDecimal("5.50"));
 
         Product saved = productRepository.save(product);
 
@@ -36,8 +36,8 @@ class ProductRepositoryImplTest {
     void existsById_shouldReturnTrueAfterSave() {
         Product product = new Product(
                 "Bread",
-                new BigDecimal("2.00"),
-                LocalDate.now().plusDays(2));
+                LocalDate.now().plusDays(2),
+                new BigDecimal("2.00"));
 
         Product saved = productRepository.save(product);
 
@@ -48,8 +48,8 @@ class ProductRepositoryImplTest {
     void deleteById_shouldRemoveProduct() {
         Product product = new Product(
                 "Eggs",
-                new BigDecimal("4.00"),
-                LocalDate.now().plusDays(10));
+                LocalDate.now().plusDays(10),
+                new BigDecimal("4.00"));
 
         Product saved = productRepository.save(product);
 

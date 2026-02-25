@@ -35,8 +35,8 @@ class ProductServiceImplTest {
     void createProduct_shouldCallRepositorySave() {
         Product product = new Product(
                 "Juice",
-                new BigDecimal("3.50"),
-                LocalDate.now().plusDays(3));
+                LocalDate.now().plusDays(3),
+                new BigDecimal("3.50"));
 
         when(productRepository.save(any(Product.class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
@@ -51,8 +51,8 @@ class ProductServiceImplTest {
     void getProductById_shouldReturnProduct() {
         UUID id = UUID.randomUUID();
         Product product = new Product(id, "Tea",
-                new BigDecimal("2.50"),
-                LocalDate.now().plusDays(7));
+         LocalDate.now().plusDays(7),
+                new BigDecimal("2.50"));
 
         when(productRepository.findById(id))
                 .thenReturn(Optional.of(product));
@@ -75,9 +75,9 @@ class ProductServiceImplTest {
 
     @Test
     void getProductsByPriceRange_shouldFilterCorrectly() {
-        Product p1 = new Product("A", new BigDecimal("10"), LocalDate.now());
-        Product p2 = new Product("B", new BigDecimal("50"), LocalDate.now());
-        Product p3 = new Product("C", new BigDecimal("150"), LocalDate.now());
+        Product p1 = new Product("A",LocalDate.now() ,new BigDecimal("10"));
+        Product p2 = new Product("B", LocalDate.now() ,new BigDecimal("50"));
+        Product p3 = new Product("C", LocalDate.now(),new BigDecimal("150"));
 
         when(productRepository.findAll())
                 .thenReturn(List.of(p1, p2, p3));
