@@ -5,10 +5,11 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class Product {
-    private String productName;
     private UUID id;
+    private String productName;
     private LocalDate expirationDate;
     private BigDecimal price;
+    
 
     public Product(){
         this.id=UUID.randomUUID();
